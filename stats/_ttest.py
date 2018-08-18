@@ -21,10 +21,10 @@ from copy import copy
 import scipy
 
 # included modules
-from pyvttbl.misc.support import _flatten
-from pyvttbl.stats import _stats
-from pyvttbl.stats._noncentral import nctcdf
-from pyvttbl.misc.texttable import Texttable as TextTable
+from pyvter.misc.support import _flatten
+from pyvter.stats import _stats
+from pyvter.stats._noncentral import nctcdf
+from pyvter.misc.texttable import Texttable as TextTable
 
 class Ttest(OrderedDict):
     """Student's t-test"""

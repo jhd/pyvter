@@ -17,11 +17,11 @@ import math
 from collections import Counter
 from copy import copy, deepcopy
 
-import pylab
+import matplotlib
 import scipy
 import numpy as np
 
-from pyvttbl.misc.support import _isfloat,_str
+from pyvter.misc.support import _isfloat,_str
 
 def interaction_plot(df, val, xaxis, 
                      seplines=None, sepxplots=None, sepyplots=None,
@@ -33,7 +33,7 @@ def interaction_plot(df, val, xaxis,
 
        args:
           df:
-             a pyvttbl.DataFrame object
+             a pyvter.DataFrame object
     
           val:
              the label of the dependent variable
@@ -87,7 +87,7 @@ def interaction_plot(df, val, xaxis,
     #  3. Figure out ymin and ymax if 'AUTO' is specified        #
     #  4. Figure out how many subplots we need to make and the   #
     #     levels of those subplots                               #
-    #  5. Initialize pylab.figure and set plot parameters        #
+    #  5. Initialize matplotlib.figure and set plot parameters        #
     #  6. Build and set main title                               #
     #  7. loop through the the rlevels and clevels and make      #
     #     subplots                                               #
@@ -103,7 +103,7 @@ def interaction_plot(df, val, xaxis,
     #  1. Check to make sure a plot can be generated with the    
     #     specified arguments and parameter
     ##############################################################
-    # pylab doesn't like not being closed. To avoid starting
+    # matplotlib doesn't like not being closed. To avoid starting
     # a plot without finishing it, we do some extensive checking
     # up front
 
@@ -237,9 +237,9 @@ def interaction_plot(df, val, xaxis,
     test['numcols']  = numcols
     test['clevels']  = clevels
     
-    #  6. Initialize pylab.figure and set plot parameters
+    #  6. Initialize matplotlib.figure and set plot parameters
     ##############################################################  
-    fig = pylab.figure(figsize=(6*numcols, 4*numrows+1))
+    fig = matplotlib.figure(figsize=(6*numcols, 4*numrows+1))
     fig.subplots_adjust(wspace=.05, hspace=0.2)
     
     #  7. Build and set main title
@@ -281,7 +281,7 @@ def interaction_plot(df, val, xaxis,
             
             #  8.1 Create new axes for the subplot
             ######################################################
-            axs.append(pylab.subplot(numrows, numcols, plotnum))
+            axs.append(matplotlib.subplot(numrows, numcols, plotnum))
 
             ######## If separate lines are not specified #########
             if seplines == None:
@@ -314,7 +314,7 @@ def interaction_plot(df, val, xaxis,
                     
                 else : # categorical x axis
                     axs[-1].errorbar(_xrange(len(x)), y, yerr)
-                    pylab.xticks(_xrange(len(x)), x)
+                    matplotlib.xticks(_xrange(len(x)), x)
                     xmin = - 0.5
                     xmax = len(x) - 0.5
                     
@@ -363,13 +363,13 @@ def interaction_plot(df, val, xaxis,
                             axs[-1].errorbar(
                                 _xrange(len(x)), y[i].flatten(), yerr)[0])
                         
-                        pylab.xticks(_xrange(len(x)), x)
+                        matplotlib.xticks(_xrange(len(x)), x)
                         xmin = - 0.5
                         xmax = len(x) - 0.5
                         
                         axs[-1].plot([xmin, xmax], [0., 0.], 'k:')
 
-                pylab.figlegend(plots, labels, loc=1,
+                matplotlib.figlegend(plots, labels, loc=1,
                                 labelsep=.005,
                                 handlelen=.01,
                                 handletextsep=.005)
@@ -398,21 +398,21 @@ def interaction_plot(df, val, xaxis,
                         % (sepyplots, _str(rlevel),
                            sepxplots, _str(rlevel))
                 
-            pylab.title(title, fontsize='medium')
+            matplotlib.title(title, fontsize='medium')
             test['subplot_titles'].append(title)
 
             #  8.3 Format the subplot
             ######################################################
-            pylab.xlim(xmin, xmax)
-            pylab.ylim(ymin, ymax)
+            matplotlib.xlim(xmin, xmax)
+            matplotlib.ylim(ymin, ymax)
 
             # supress tick labels unless subplot is on the bottom
             # row or the far left column
             if r != (len(rlevels) - 1):
-                pylab.setp(axs[-1].get_xticklabels(), visible=False)
+                matplotlib.setp(axs[-1].get_xticklabels(), visible=False)
                 
             if c != 0:
-                pylab.setp(axs[-1].get_yticklabels(), visible=False)
+                matplotlib.setp(axs[-1].get_yticklabels(), visible=False)
 
             # Set the aspect ratio for the subplot
             Dx = abs(axs[-1].get_xlim()[0] - axs[-1].get_xlim()[1])
@@ -429,7 +429,7 @@ def interaction_plot(df, val, xaxis,
         if aggregate == 'ci':
             aggregate = '95% ci' 
             
-        pylab.xlabel('\n\n                '
+        matplotlib.xlabel('\n\n                '
                      '*Error bars reflect %s'\
                      %aggregate.upper())
 
@@ -448,18 +448,18 @@ def interaction_plot(df, val, xaxis,
     fname = os.path.join(output_dir, fname)
     
     if quality == 'low' or fname.endswith('.svg'):
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
         
     elif quality == 'medium':
-        pylab.savefig(fname, dpi=200)
+        matplotlib.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        pylab.savefig(fname, dpi=300)
+        matplotlib.savefig(fname, dpi=300)
         
     else:
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
 
-    pylab.close()
+    matplotlib.close()
 
     test['fname'] = fname
 

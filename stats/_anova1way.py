@@ -22,11 +22,11 @@ import scipy
 import numpy as np
 
 # included modules
-from pyvttbl.stats import _stats
-from pyvttbl.stats._noncentral import ncfcdf
-from pyvttbl.stats.qsturng import qsturng, psturng
-from pyvttbl.misc.texttable import Texttable as TextTable
-from pyvttbl.misc.support import *
+from pyvter.stats import _stats
+from pyvter.stats._noncentral import ncfcdf
+from pyvter.stats.qsturng import qsturng, psturng
+from pyvter.misc.texttable import Texttable as TextTable
+from pyvter.misc.support import *
 	    
 class Anova1way(OrderedDict):
     def __init__(self, *args, **kwds):

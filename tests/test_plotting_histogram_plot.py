@@ -17,9 +17,9 @@ import warnings
 import os
 
 import numpy as np
-from pyvttbl import DataFrame
-from pyvttbl.plotting import histogram_plot
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.plotting import histogram_plot
+from pyvter.misc.support import *
 
 class Test_plotHist(unittest.TestCase):
     def test0(self):

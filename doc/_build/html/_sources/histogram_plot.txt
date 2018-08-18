@@ -8,7 +8,7 @@ Example
 
 .. sourcecode:: python
 
-    >>> from pyvttbl import DataFrame
+    >>> from pyvter import DataFrame
     >>> from random import normalvariate
     >>> df['Data']=[normalvariate(mu=0, sigma=1) for i in xrange(1000)]
     >>> df.histogram_plot('Data', bins=20)

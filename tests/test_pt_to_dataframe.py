@@ -19,10 +19,10 @@ import math
 
 import numpy as np
 
-from pyvttbl import DataFrame
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.misc.support import *
 
-class Test_pyvttbl_to_dataframe(unittest.TestCase):
+class Test_pyvter_to_dataframe(unittest.TestCase):
     def test0(self):
         R = """\
 TIME    CONDITION=A   CONDITION=B 
@@ -94,7 +94,7 @@ LAB     young   11.875 """
         
 def suite():
     return unittest.TestSuite((
-            unittest.makeSuite(Test_pyvttbl_to_dataframe)
+            unittest.makeSuite(Test_pyvter_to_dataframe)
                               ))
 
 if __name__ == "__main__":

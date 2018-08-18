@@ -192,7 +192,7 @@ elif sys.version_info[0] == 3:
 import csv
 import numpy
 import scipy
-import pylab
+import matplotlib
 
 from collections import OrderedDict
 from copy import copy
@@ -213,9 +213,9 @@ except:
 from scipy.signal import detrend
 from sets import Set
 
-from pyvttbl.misc.SimpleHTML import *
-from pyvttbl.misc.texttable import Texttable as TextTable
-from pyvttbl.misc.support import *
+from pyvter.misc.SimpleHTML import *
+from pyvter.misc.texttable import Texttable as TextTable
+from pyvter.misc.support import *
 
 def observed_power(df,dfe,nc,alpha=0.05,eps=1.0):
     """
@@ -621,7 +621,7 @@ class Anova(OrderedDict):
  
         ## Intialize self variables
         
-        # holds a reference to a pyvttbl.DataFrame object
+        # holds a reference to a pyvter.DataFrame object
         self.df=dataframe
 
         # a string label/key to the dependent variable data in self.df
@@ -1950,7 +1950,7 @@ class Anova(OrderedDict):
             if quality=='medium' : dpi=200
             elif quality=='high' : dpi=300
             
-            im=pylab.imread(fname)[:,:,0]
+            im=matplotlib.imread(fname)[:,:,0]
             imh,imw=shape(im)
 
             width,height=imw*1.,imh*1.

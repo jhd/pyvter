@@ -15,7 +15,7 @@ to build the DataFrame from frequency counts.
 
 ::
 
-    >>> from pyvttbl import DataFrame
+    >>> from pyvter import DataFrame
     >>> from collection import Counter
     >>> df=DataFrame()
     >>> df['FAULTS'] = list(Counter(Low=177,High=181).elements())

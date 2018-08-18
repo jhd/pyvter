@@ -16,7 +16,7 @@ elif sys.version_info[0] == 3:
 from collections import Counter,OrderedDict
 from copy import copy
 
-from pyvttbl.misc.texttable import Texttable as TextTable
+from pyvter.misc.texttable import Texttable as TextTable
 
 class Marginals(OrderedDict):
     """
@@ -33,7 +33,7 @@ class Marginals(OrderedDict):
           where: criterion to apply to table before running analysis
 
        returns:
-          a :mod:`pyvttbl.stats`. :class:`Marginals` object
+          a :mod:`pyvter.stats`. :class:`Marginals` object
     """
 
     def __init__(self, *args, **kwds):

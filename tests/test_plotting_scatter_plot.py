@@ -17,9 +17,9 @@ import warnings
 import os
 
 import numpy as np
-from pyvttbl import DataFrame
-from pyvttbl.plotting import scatter_plot
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.plotting import scatter_plot
+from pyvter.misc.support import *
 
 class Test_scatter_plot(unittest.TestCase):
     def test01(self):

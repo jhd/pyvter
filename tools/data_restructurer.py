@@ -11,7 +11,7 @@ elif sys.version_info[0] == 3:
     _xrange = range
     
 import csv
-from pyvttbl import DataFrame
+from pyvter import DataFrame
 
 def _xunique_combinations(items, n):
     """

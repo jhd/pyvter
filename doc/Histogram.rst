@@ -32,7 +32,7 @@ Example using :class:`Histogram` directly
 
 ::
 
-    >>> from pyvttbl.stats import Histogram
+    >>> from pyvter.stats import Histogram
     >>> form random import normalvariate
     >>> data = [normalvariate(mu=0,sigma=1) for i in xrange(1000)]
     >>> hist = Histogram()

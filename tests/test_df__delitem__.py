@@ -18,8 +18,8 @@ import os
 
 import numpy as np
 
-from pyvttbl import DataFrame
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.misc.support import *
 
 class Test_del_item(unittest.TestCase):
     def setUp(self):

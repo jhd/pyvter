@@ -8,7 +8,7 @@ A simple example
 
 ::
 
-    >>> from pyvttbl.stats import ChiSquare1way
+    >>> from pyvter.stats import ChiSquare1way
     >>> x2 = ChiSquare1way()
     >>> x2.run([17, 19, 18, 20, 32, 20])
     >>> print(x2)
@@ -106,7 +106,7 @@ will calculate the frequencies for the user.
 
 ::
 
-    >>> from pyvttbl import DataFrame
+    >>> from pyvter import DataFrame
     >>> from random import randint # simulate a 6-sided die
     >>> df = DataFrame()
     >>> for i in _xrange(1000):
@@ -165,7 +165,7 @@ And we fail to reject the null.
 Direct access to results
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Like many of the :mod:`pyvttbl.stats` objects :class:`ChiSquare1way`
+Like many of the :mod:`pyvter.stats` objects :class:`ChiSquare1way`
 inherents an :class:`OrderedDict`.
 ::
 

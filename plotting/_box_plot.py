@@ -13,11 +13,11 @@ elif sys.version_info[0] == 3:
     
 import os
 
-import pylab
+import matplotlib
 import numpy as np
 from collections import Counter
 
-from pyvttbl.misc.support import _flatten
+from pyvter.misc.support import _flatten
 
 def box_plot(df, val, factors=None, where=None,
         fname=None, output_dir='', quality='medium'):
@@ -26,7 +26,7 @@ def box_plot(df, val, factors=None, where=None,
 
     args:
        df:
-          a pyvttbl.DataFrame object
+          a pyvter.DataFrame object
           
        val:
           the label of the dependent variable
@@ -91,11 +91,11 @@ def box_plot(df, val, factors=None, where=None,
 
     if factors == []:
         d = df.select_col(val, where=where)            
-        fig = pylab.figure()
-        pylab.boxplot(np.array(d))
-        xticks = pylab.xticks()[0]
+        fig = matplotlib.figure()
+        matplotlib.boxplot(np.array(d))
+        xticks = matplotlib.xticks()[0]
         xlabels = [val]
-        pylab.xticks(xticks, xlabels)
+        matplotlib.xticks(xticks, xlabels)
 
         test['d'] = d
         test['val'] = val
@@ -105,12 +105,12 @@ def box_plot(df, val, factors=None, where=None,
                        where=where,
                        aggregate='tolist')
 
-        fig = pylab.figure(figsize=(6*len(factors),6))
+        fig = matplotlib.figure(figsize=(6*len(factors),6))
         fig.subplots_adjust(left=.05, right=.97, bottom=0.24)
-        pylab.boxplot([np.array(_flatten(d)) for d in D])
-        xticks = pylab.xticks()[0]
+        matplotlib.boxplot([np.array(_flatten(d)) for d in D])
+        xticks = matplotlib.xticks()[0]
         xlabels = ['\n'.join('%s = %s'%fc for fc in c) for c in D.rnames]
-        pylab.xticks(xticks, xlabels,
+        matplotlib.xticks(xticks, xlabels,
                      rotation=35,
                      verticalalignment='top')
 
@@ -141,18 +141,18 @@ def box_plot(df, val, factors=None, where=None,
     
     # save figure
     if quality == 'low' or fname.endswith('.svg'):
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
         
     elif quality == 'medium':
-        pylab.savefig(fname, dpi=200)
+        matplotlib.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        pylab.savefig(fname, dpi=300)
+        matplotlib.savefig(fname, dpi=300)
         
     else:
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
 
-    pylab.close()
+    matplotlib.close()
 
     if df.TESTMODE:
         return test

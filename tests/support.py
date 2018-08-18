@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
     _xrange = range
 
 from collections import Counter
-from pyvttbl.misc.support import *
+from pyvter.misc.support import *
 
 def fcmp(d,r):
     """

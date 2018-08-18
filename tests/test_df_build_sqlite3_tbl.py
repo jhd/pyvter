@@ -19,8 +19,8 @@ import os
 from random import shuffle
 import numpy as np
 
-from pyvttbl import DataFrame
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.misc.support import *
 
 class Test__build_sqlite3_tbl(unittest.TestCase):
 

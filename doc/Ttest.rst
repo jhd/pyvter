@@ -45,7 +45,7 @@ Here the :class:`Ttest` object is passed lists of data.
 
 ::
 
-    >>> from pyvttbl.stats import Ttest
+    >>> from pyvter.stats import Ttest
     >>> A = [3,4, 5,8,9, 1,2,4, 5]
     >>> B = [6,19,3,2,14,4,5,17,1]
     >>> D=Ttest()
@@ -82,7 +82,7 @@ Example data from http://alamos.math.arizona.edu/~rychlik/math263/class_notes/Ch
 
 ::
 
-    >>> from pyvttbl.stats import Ttest
+    >>> from pyvter.stats import Ttest
     >>> A = [24,61,59,46,43,44,52,43,58,67,62,57,71,49,54,43,53,57,49,56,33]
     >>> B = [42,33,46,37,43,41,10,42,55,19,17,55,26,54,60,28,62,20,53,48,37,85,42]
     >>> D=Ttest()
@@ -115,7 +115,7 @@ And last but not least...
 
 ::
 
-    >>> from pyvttbl.stats import Ttest
+    >>> from pyvter.stats import Ttest
     >>> A = [3,4, 5,8,9, 1,2,4, 5]
     >>> B = [6,19,3,2,14,4,5,17,1]
     >>> D=Ttest()

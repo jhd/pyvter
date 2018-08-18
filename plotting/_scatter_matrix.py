@@ -13,12 +13,12 @@ elif sys.version_info[0] == 3:
 
 import os
 
-import pylab
+import matplotlib
 import scipy
 import numpy as np
 
-from pyvttbl.misc.support import *
-from pyvttbl.plotting.support import \
+from pyvter.misc.support import *
+from pyvter.plotting.support import \
      _bivariate_trend_fit, _tick_formatter, _subplots
 
 def scatter_matrix(df, variables, alpha=0.5, grid=False,
@@ -81,7 +81,7 @@ def scatter_matrix(df, variables, alpha=0.5, grid=False,
                           squeeze=False)
 
     # remove gaps between subplots
-    pylab.subplots_adjust(wspace=0, hspace=0)
+    matplotlib.subplots_adjust(wspace=0, hspace=0)
 
     ticks = {}
     lims = {}
@@ -285,5 +285,5 @@ def scatter_matrix(df, variables, alpha=0.5, grid=False,
     else:
         fig.savefig(fname)
 
-    pylab.close()
+    matplotlib.close()
 

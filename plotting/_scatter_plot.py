@@ -13,10 +13,10 @@ elif sys.version_info[0] == 3:
 
 import os
 
-import pylab
+import matplotlib
 import numpy as np
 
-from pyvttbl.plotting.support import \
+from pyvter.plotting.support import \
      _bivariate_trend_fit, _tick_formatter, _subplots
 
 def scatter_plot(df, aname, bname, where=None, trend=None,
@@ -77,19 +77,19 @@ def scatter_plot(df, aname, bname, where=None, trend=None,
     ylim = [bmin - .1*brange, bmax + .1*brange]
 
     # initialize the figure
-    fig=pylab.figure(figsize=(4,4))
+    fig=matplotlib.figure(figsize=(4,4))
     fig.subplots_adjust(left=.2, bottom=.2, top=.95, right=.95)
 
     # make the scatter plot
-    pylab.scatter(adata, bdata, alpha=alpha)
+    matplotlib.scatter(adata, bdata, alpha=alpha)
 
     # format stuff
-    pylab.xticks(xticks, _tick_formatter(xticks),rotation=30)
-    pylab.yticks(yticks, _tick_formatter(yticks))
-    pylab.xlim(xlim)
-    pylab.ylim(ylim)
-    pylab.xlabel(aname)
-    pylab.ylabel(bname)
+    matplotlib.xticks(xticks, _tick_formatter(xticks),rotation=30)
+    matplotlib.yticks(yticks, _tick_formatter(yticks))
+    matplotlib.xlim(xlim)
+    matplotlib.ylim(ylim)
+    matplotlib.xlabel(aname)
+    matplotlib.ylabel(bname)
 
     # perform trend fit if requested
     if trend in ['exponential','linear','logarithmic',
@@ -102,8 +102,8 @@ def scatter_plot(df, aname, bname, where=None, trend=None,
 
         # plot fit
         ind = np.linspace(xlim[0], xlim[1], 1000)  
-        pylab.plot(ind, model(ind), alpha=.8)                        
-        pylab.text(xticks[0], yticks[-1],
+        matplotlib.plot(ind, model(ind), alpha=.8)                        
+        matplotlib.text(xticks[0], yticks[-1],
                    tex_str,
                    horizontalalignment='left',
                    verticalalignment='top',
@@ -119,18 +119,18 @@ def scatter_plot(df, aname, bname, where=None, trend=None,
 
     # save figure
     if quality == 'low' or fname.endswith('.svg'):
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
         
     elif quality == 'medium':
-        pylab.savefig(fname, dpi=200)
+        matplotlib.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        pylab.savefig(fname, dpi=300)
+        matplotlib.savefig(fname, dpi=300)
         
     else:
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
 
-    pylab.close()
+    matplotlib.close()
 
     if df.TESTMODE:
         # build and return test dictionary

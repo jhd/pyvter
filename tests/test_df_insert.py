@@ -20,8 +20,8 @@ import numpy as np
 
 from dictset import DictSet,_rep_generator
 
-from pyvttbl import DataFrame
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.misc.support import *
 
 class Test_insert(unittest.TestCase):
     def test0(self):
@@ -76,7 +76,7 @@ class Test_insert(unittest.TestCase):
         self.assertEqual(df.types(), ['real', 'integer', 'text'])
 
     def test5(self):
-        from pyvttbl import DataFrame
+        from pyvter import DataFrame
         from collections import namedtuple
         import sys
         import time

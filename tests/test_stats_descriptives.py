@@ -16,9 +16,9 @@ import unittest
 import warnings
 import os
 
-from pyvttbl import DataFrame
-from pyvttbl.stats import Descriptives
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.stats import Descriptives
+from pyvter.misc.support import *
 
 class Test_descriptives(unittest.TestCase):
     def test0(self):

@@ -22,9 +22,9 @@ import scipy
 import numpy as np
 
 # included modules
-from pyvttbl.stats import _stats
-from pyvttbl.misc.texttable import Texttable as TextTable
-from pyvttbl.misc.support import *
+from pyvter.stats import _stats
+from pyvter.misc.texttable import Texttable as TextTable
+from pyvter.misc.support import *
 
 class Correlation(OrderedDict):
     """bivariate correlation matrix"""

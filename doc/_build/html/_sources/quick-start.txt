@@ -1,7 +1,7 @@
 Quick-Start Guide
 =================
 
-pyvttbl has two primary containers for storing data. :class:`DataFrame` objects 
+pyvter has two primary containers for storing data. :class:`DataFrame` objects 
 hold tabulated data in a manner similiar to what you would have in a 
 spreadsheet. DataFrames are basically dictionary objects. The *keys*
 are the names of the columns and the *values* are NumPy arrays or
@@ -29,7 +29,7 @@ True) and the number of lines at the beginning to skip (Default is 0).
 
    >>> from __future__ import print_function
    >>> 
-   >>> from pyvttbl import DataFrame
+   >>> from pyvter import DataFrame
    >>> df = DataFrame()
    >>> df.read_tbl('example.csv')
    >>> print(df)
@@ -231,7 +231,7 @@ data. A variety of other aggregators can also be applied:
  varp(X)              variance of the population X (N)
 ==================   ===========================================================
 
-The pyvttbl module takes advantage of aggregate functions in from pystaggrelite3. 
+The pyvter module takes advantage of aggregate functions in from pystaggrelite3. 
 You can also bind your own using :class:`DataFrame`. :meth:`bind_aggregate`.
 
 .. sourcecode:: python
@@ -574,7 +574,7 @@ These indices can be used to lookup the row and column labels
     TIMEOFDAY=T2, MODEL=M3	 COURSE=C3 	 1.33333333333
     >>> 
     
-.. note:: Unlike :mod:`numpy`. :meth:`ndenumerate`, :mod:`pyvttbl`. :meth:`ndenumerate`
+.. note:: Unlike :mod:`numpy`. :meth:`ndenumerate`, :mod:`pyvter`. :meth:`ndenumerate`
           will only return the first two indices regardless of the number of dimensions
           in the table.
     
@@ -602,7 +602,7 @@ Converting a :class:`PyvtTbl` to a :class:`DataFrame`
 .. sourcecode:: python
 
    >>> import numpy as np
-   >>> from pyvttbl import DataFrame
+   >>> from pyvter import DataFrame
    >>> df = DataFrame()
    >>> df.read_tbl('example.csv')
    >>> df['LOG10_X'] = np.log10(df['X'])

@@ -11,7 +11,7 @@ a mean of 0 and a standard deviation of 1.
 
 ::
 
-    >>> from pyvttbl.stats import Descriptives
+    >>> from pyvter.stats import Descriptives
     >>> from random import normalvariate
     >>> desc = Descriptives()
     >>> desc.run([normalvariate(mu=0,sigma=1) for i in xrange(1000)])

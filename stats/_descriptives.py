@@ -19,8 +19,8 @@ from copy import copy
 
 import numpy as np
 
-from pyvttbl.misc.texttable import Texttable as TextTable
-from pyvttbl.misc.support import *
+from pyvter.misc.texttable import Texttable as TextTable
+from pyvter.misc.support import *
 
 class Descriptives(OrderedDict):
     def __init__(self, *args, **kwds):

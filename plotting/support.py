@@ -17,7 +17,7 @@ import numpy as np
 import scipy
 import matplotlib.pyplot as plt
 
-from pyvttbl.misc.texttable import _str
+from pyvter.misc.texttable import _str
         
 def _bivariate_trend_fit(x,y,trend):
     x,y = np.array(x),np.array(y)

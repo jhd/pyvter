@@ -1,4 +1,4 @@
-from pyvttbl import DataFrame
+from pyvter import DataFrame
 
 # dealing with lists is actually easier here
 data1 = [10,12,14,15]

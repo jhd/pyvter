@@ -20,8 +20,8 @@ from collections import OrderedDict
 
 import numpy as np
 
-from pyvttbl import DataFrame
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.misc.support import *
 
 class Test__setitem__(unittest.TestCase):
     def test1(self):

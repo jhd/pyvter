@@ -21,8 +21,8 @@ from copy import copy
 import pystaggrelite3
 
 # included modules
-from pyvttbl.misc.texttable import Texttable as TextTable
-from pyvttbl.misc.support import *
+from pyvter.misc.texttable import Texttable as TextTable
+from pyvter.misc.support import *
 
 class Histogram(OrderedDict):
     def __init__(self, *args, **kwds):

@@ -24,7 +24,7 @@ from pprint import pprint as pp
 from copy import copy, deepcopy
 from collections import OrderedDict, Counter, namedtuple
 
-import pylab
+import matplotlib
 import scipy
 import numpy as np
 
@@ -1200,7 +1200,7 @@ class DataFrame(OrderedDict):
               None
               
            example:
-              >>> from pyvttbl import DataFrame
+              >>> from pyvter import DataFrame
               >>> from collections import namedtuple
               >>> Person = namedtuple('Person',['first','last','age','gender'])
               >>> df =DataFrame()
@@ -1514,7 +1514,7 @@ class DataFrame(OrderedDict):
               None
 
            example:
-              >>> from pyvttbl import DataFrame
+              >>> from pyvter import DataFrame
               >>> from collections import namedtuple
               >>> Person = namedtuple('Person',['first','last','age','gender'])
               >>> df =DataFrame()
@@ -1616,7 +1616,7 @@ class DataFrame(OrderedDict):
               where: criterion to apply to table before running analysis
 
            returns:
-              a :mod:`pyvttbl.stats`. :class:`Descriptives` object
+              a :mod:`pyvter.stats`. :class:`Descriptives` object
         """
 
         if where == None:
@@ -1695,7 +1695,7 @@ class DataFrame(OrderedDict):
                conditions to apply before running analysis
 
            return:
-              an :class:`pyvttbl.stats.Anova1way` object 
+              an :class:`pyvter.stats.Anova1way` object 
         """
         if where == None:
             where = []
@@ -1744,7 +1744,7 @@ class DataFrame(OrderedDict):
                   conditions to apply before running analysis
 
            return:
-              an :class:`pyvttbl.stats.ChiSquare1way` object 
+              an :class:`pyvter.stats.ChiSquare1way` object 
         """
 
         # ched the expected_dict
@@ -1799,7 +1799,7 @@ class DataFrame(OrderedDict):
                   conditions to apply before running analysis
 
            return:
-              an :class:`pyvttbl.stats.ChiSquare2way` object 
+              an :class:`pyvter.stats.ChiSquare2way` object 
         """
         row_factor = self.select_col(rfactor, where)
         col_factor = self.select_col(cfactor, where)
@@ -1828,7 +1828,7 @@ class DataFrame(OrderedDict):
                   conditions to apply before running analysis
 
            return:
-              an :class:`pyvttbl.stats.Correlation` object 
+              an :class:`pyvter.stats.Correlation` object 
         """
         
         list_of_lists = []
@@ -1871,7 +1871,7 @@ class DataFrame(OrderedDict):
                   conditions to apply before running analysis
 
            return:
-              an :class:`pyvttbl.stats.Ttest` object 
+              an :class:`pyvter.stats.Ttest` object 
         """
         
 
@@ -1915,7 +1915,7 @@ class DataFrame(OrderedDict):
               range: list of length 2 defining min and max bin edges
 
            returns:
-              a :mod:`pyvttbl.stats`. :class:`Descriptives` object
+              a :mod:`pyvter.stats`. :class:`Descriptives` object
         """
         if where == None:
             where = []

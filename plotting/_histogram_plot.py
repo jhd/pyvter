@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
 
 import os
 
-import pylab
+import matplotlib
 import numpy as np
 
 def histogram_plot(df, val, where=None, bins=10,
@@ -48,10 +48,10 @@ def histogram_plot(df, val, where=None, bins=10,
     # select_col does checking of val and where
     v = df.select_col(val, where=where)
     
-    fig=pylab.figure()
-    tup = pylab.hist(np.array(v), bins=bins, range=range,
+    fig=matplotlib.figure()
+    tup = matplotlib.hist(np.array(v), bins=bins, range=range,
                      normed=density, cumulative=cumulative)
-    pylab.title(val)
+    matplotlib.title(val)
 
     if fname == None:
         fname = 'hist(%s'%val
@@ -65,18 +65,18 @@ def histogram_plot(df, val, where=None, bins=10,
     
     # save figure
     if quality == 'low' or fname.endswith('.svg'):
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
         
     elif quality == 'medium':
-        pylab.savefig(fname, dpi=200)
+        matplotlib.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        pylab.savefig(fname, dpi=300)
+        matplotlib.savefig(fname, dpi=300)
         
     else:
-        pylab.savefig(fname)
+        matplotlib.savefig(fname)
 
-    pylab.close()
+    matplotlib.close()
 
     if df.TESTMODE:
         # build and return test dictionary

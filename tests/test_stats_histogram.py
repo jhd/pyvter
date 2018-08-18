@@ -18,9 +18,9 @@ import os
 
 import numpy as np
 
-from pyvttbl import DataFrame
-##from pyvttbl.plotting import box_plot
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+##from pyvter.plotting import box_plot
+from pyvter.misc.support import *
         
 class Test_histogram(unittest.TestCase):
     def test0(self):

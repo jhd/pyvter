@@ -18,8 +18,8 @@ import os
 
 import numpy as np
 
-from pyvttbl import DataFrame, PyvtTbl
-from pyvttbl.misc.support import *
+from pyvter import DataFrame, PyvtTbl
+from pyvter.misc.support import *
 
 class Test_pivot_0(unittest.TestCase):
                     

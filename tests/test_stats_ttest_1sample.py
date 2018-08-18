@@ -14,11 +14,11 @@ from math import isnan, isinf, floor
 import numpy as np
 from pprint import pprint as pp
 
-from pyvttbl import PyvtTbl
-from pyvttbl import DataFrame
-from pyvttbl.plotting import *
-from pyvttbl.stats import *
-from pyvttbl.misc.support import *
+from pyvter import PyvtTbl
+from pyvter import DataFrame
+from pyvter.plotting import *
+from pyvter.stats import *
+from pyvter.misc.support import *
 
 class Test_ttest1sample(unittest.TestCase):
     def test0(self):

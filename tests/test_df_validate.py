@@ -16,8 +16,8 @@ import unittest
 import warnings
 import os
 
-from pyvttbl import DataFrame
-from pyvttbl.misc.support import *
+from pyvter import DataFrame
+from pyvter.misc.support import *
 
 class Test_validate_for_success(unittest.TestCase):
     def test0(self):
