@@ -3,3 +3,4 @@
 *.pyee
 *.png
 tests/output/*
+nosetests.xml
