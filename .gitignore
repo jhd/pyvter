@@ -2,3 +2,4 @@
 *.pye
 *.pyee
 *.png
+tests/output/*
