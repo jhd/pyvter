@@ -372,7 +372,7 @@ def interaction_plot(df, val, xaxis,
                 plt.figlegend(plots, labels, loc=1,
                                 labelsep=.005,
                                 handlelen=.01,
-                                handletextsep=.005)
+                                handletextpad=.005)
 
             test['y'].append(y)
             if yerr == None:

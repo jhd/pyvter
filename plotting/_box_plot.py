@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
     
 import os
 
-import matplotlib
+from matplotlib import pyplot as plt
 import numpy as np
 from collections import Counter
 
@@ -91,11 +91,11 @@ def box_plot(df, val, factors=None, where=None,
 
     if factors == []:
         d = df.select_col(val, where=where)            
-        fig = matplotlib.figure()
-        matplotlib.boxplot(np.array(d))
-        xticks = matplotlib.xticks()[0]
+        fig = plt.figure()
+        plt.boxplot(np.array(d))
+        xticks = plt.xticks()[0]
         xlabels = [val]
-        matplotlib.xticks(xticks, xlabels)
+        plt.xticks(xticks, xlabels)
 
         test['d'] = d
         test['val'] = val
@@ -105,12 +105,12 @@ def box_plot(df, val, factors=None, where=None,
                        where=where,
                        aggregate='tolist')
 
-        fig = matplotlib.figure(figsize=(6*len(factors),6))
+        fig = plt.figure(figsize=(6*len(factors),6))
         fig.subplots_adjust(left=.05, right=.97, bottom=0.24)
-        matplotlib.boxplot([np.array(_flatten(d)) for d in D])
-        xticks = matplotlib.xticks()[0]
+        plt.boxplot([np.array(_flatten(d)) for d in D])
+        xticks = plt.xticks()[0]
         xlabels = ['\n'.join('%s = %s'%fc for fc in c) for c in D.rnames]
-        matplotlib.xticks(xticks, xlabels,
+        plt.xticks(xticks, xlabels,
                      rotation=35,
                      verticalalignment='top')
 
@@ -141,18 +141,18 @@ def box_plot(df, val, factors=None, where=None,
     
     # save figure
     if quality == 'low' or fname.endswith('.svg'):
-        matplotlib.savefig(fname)
+        plt.savefig(fname)
         
     elif quality == 'medium':
-        matplotlib.savefig(fname, dpi=200)
+        plt.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        matplotlib.savefig(fname, dpi=300)
+        plt.savefig(fname, dpi=300)
         
     else:
-        matplotlib.savefig(fname)
+        plt.savefig(fname)
 
-    matplotlib.close()
+    plt.close()
 
     if df.TESTMODE:
         return test
