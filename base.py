@@ -2095,7 +2095,7 @@ class PyvtTbl(np.ma.MaskedArray, object):
         |   subclassing Numpy objects are a little different from subclassing other objects.
         |   see: http://docs.scipy.org/doc/numpy/user/basics.subclassing.html
         """
-        if data == None:
+        if data is None:
             data = []
 
         maparms = dict(copy=kwds.get('copy',False),
@@ -2449,7 +2449,7 @@ class PyvtTbl(np.ma.MaskedArray, object):
 ##             'row_tots:'+str(self.row_tots),
 ##             'col_tots:'+str(self.col_tots)])+'\n\n'
     
-        if self == []:
+        if len(self) == 0:
             return '(table is empty)'
 
         show_col_tots = any(np.invert(self.col_tots.mask))
@@ -2575,7 +2575,7 @@ class PyvtTbl(np.ma.MaskedArray, object):
         
         kwds = []
 
-        if self.row_tots != None:
+        if self.row_tots is not None:
             # sometimes np.ma.array.mask is a bool, somtimes it is a list.
             # if we just copy the mask over it will first create a list and then
             # keep appending to the list everytime the object is reprized. Not sure if
