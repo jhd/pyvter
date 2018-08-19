@@ -1,1 +1,3 @@
-This project is based on pyvttbl, which is available under the 3-Clause BSD license described in LICENSE_pyvttbl. pyvttbl is defined as code from before commit 6bae715abc1ac6ff66fd437c5aa8cb0a302e6956. pyvter as a whole is licensed under the GNU Affero General Public License V3 as described in LICENSE.
+This project is based on pyvttbl, which is available under the 3-Clause BSD license described in LICENSE_pyvttbl.
+pyvttbl is defined as code from before commit 6bae715abc1ac6ff66fd437c5aa8cb0a302e6956.
+pyvter as a whole is licensed under the GNU Affero General Public License V3 as described in LICENSE.
