@@ -25,10 +25,10 @@ from pyvter.tests.support import *
 class Test_writeTable(unittest.TestCase):
     def setUp(self):
         self.df=DataFrame()
-        self.df.read_tbl('data\suppression~subjectXgroupXageXcycleXphase.csv')
+        self.df.read_tbl(r'data/suppression~subjectXgroupXageXcycleXphase.csv')
 
     def test0(self):
-        d='data\suppression~subjectXgroupXageXcycleXphase.csv'
+        d=r'data/suppression~subjectXgroupXageXcycleXphase.csv'
         r='subjectXsexXageXgroupXcycleXphaseXsuppressionXranddata.csv'
         self.df.write()
         self.assertTrue(fcmp(d,r))
@@ -38,7 +38,7 @@ class Test_writeTable(unittest.TestCase):
 
     def test1(self):
         # with exclusion
-        d='data\suppression~subjectXgroupXageXcycleXphase.csv'
+        d=r'data/suppression~subjectXgroupXageXcycleXphase.csv'
         r='subjectXsexXageXgroupXcycleXphaseXsuppressionXranddata.csv'
         self.df.write(where=[('AGE','not in',['young'])])
         self.assertTrue(fcmp(d,r))

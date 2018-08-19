@@ -27,7 +27,7 @@ class Test_interaction_plot(unittest.TestCase):
         """no error bars specified"""
         R = {'aggregate': None,
              'clevels': [1],
-             'fname': 'output\\interaction_plot(WORDS~AGE_X_CONDITION).png',
+             'fname': r'output/interaction_plot(WORDS~AGE_X_CONDITION).png',
              'maintitle': 'WORDS by AGE * CONDITION',
              'numcols': 1,
              'numrows': 1,
@@ -47,7 +47,7 @@ class Test_interaction_plot(unittest.TestCase):
         # a simple plot
         df=DataFrame()
         df.TESTMODE=True
-        df.read_tbl('data/words~ageXcondition.csv')
+        df.read_tbl(r'data/words~ageXcondition.csv')
         D=df.interaction_plot('WORDS','AGE',
                               seplines='CONDITION',
                               output_dir='output')
@@ -76,7 +76,7 @@ class Test_interaction_plot(unittest.TestCase):
         
         R = {'aggregate': 'ci',
              'clevels': [1],
-             'fname': 'output\\interaction_plot(WORDS~AGE_X_CONDITION,yerr=95% ci).png',
+             'fname': r'output/interaction_plot(WORDS~AGE_X_CONDITION,yerr=95% ci).png',
              'maintitle': 'WORDS by AGE * CONDITION',
              'numcols': 1,
              'numrows': 1,
@@ -96,7 +96,7 @@ class Test_interaction_plot(unittest.TestCase):
         # a simple plot
         df=DataFrame()
         df.TESTMODE=True
-        df.read_tbl('data/words~ageXcondition.csv')
+        df.read_tbl(r'data/words~ageXcondition.csv')
         D=df.interaction_plot('WORDS','AGE',
                               seplines='CONDITION',
                               output_dir='output',
@@ -127,7 +127,7 @@ class Test_interaction_plot(unittest.TestCase):
         
         # a simple plot
         df=DataFrame()
-        df.read_tbl('data/words~ageXcondition.csv')
+        df.read_tbl(r'data/words~ageXcondition.csv')
         aov = df.anova('WORDS', wfactors=['AGE','CONDITION'])
         aov.plot('WORDS','AGE', seplines='CONDITION',
                  errorbars='ci', output_dir='output')
@@ -136,7 +136,7 @@ class Test_interaction_plot(unittest.TestCase):
     def test1(self):
         R = {'aggregate': None,
              'clevels': ['M1', 'M2', 'M3'],
-             'fname': 'output\\interaction_plot(ERROR~TIMEOFDAY_X_COURSE_X_MODEL,yerr=1.0).png',
+             'fname': r'output/interaction_plot(ERROR~TIMEOFDAY_X_COURSE_X_MODEL,yerr=1.0).png',
              'maintitle': 'ERROR by TIMEOFDAY * COURSE * MODEL',
              'numcols': 3,
              'numrows': 1,
@@ -162,7 +162,7 @@ class Test_interaction_plot(unittest.TestCase):
         # specify yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data/error~subjectXtimeofdayXcourseXmodel_MISSING.csv')
+        df.read_tbl(r'data/error~subjectXtimeofdayXcourseXmodel_MISSING.csv')
         D=df.interaction_plot('ERROR','TIMEOFDAY',
                               seplines='COURSE',
                               sepxplots='MODEL',
@@ -191,7 +191,7 @@ class Test_interaction_plot(unittest.TestCase):
     def test2(self):
         R = {'aggregate': 'ci',
              'clevels': [1],
-             'fname': 'output\\interaction_plot(SUPPRESSION~CYCLE_X_AGE_X_PHASE,yerr=95% ci).png',
+             'fname': r'output/interaction_plot(SUPPRESSION~CYCLE_X_AGE_X_PHASE,yerr=95% ci).png',
              'maintitle': 'SUPPRESSION by CYCLE * AGE * PHASE',
              'numcols': 1,
              'numrows': 2,
@@ -211,7 +211,7 @@ class Test_interaction_plot(unittest.TestCase):
         # generate yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl(r'data/suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 seplines='AGE',
@@ -239,7 +239,7 @@ class Test_interaction_plot(unittest.TestCase):
     def test3(self):
         R = {'aggregate': 'ci',
              'clevels': ['I', 'II'],
-             'fname': 'output\\whereGROUPnotLAB.png',
+             'fname': r'output/whereGROUPnotLAB.png',
              'maintitle': 'SUPPRESSION by CYCLE * AGE * PHASE * GROUP',
              'numcols': 2,
              'numrows': 2,
@@ -270,7 +270,7 @@ class Test_interaction_plot(unittest.TestCase):
         # separate y plots and separate x plots
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl(r'data/suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 seplines='AGE',
@@ -300,7 +300,7 @@ class Test_interaction_plot(unittest.TestCase):
         # separate y plots and separate x plots
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl(r'data/suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 seplines='AGE',
@@ -318,7 +318,7 @@ class Test_interaction_plot(unittest.TestCase):
                          'imagery',
                          'intention',
                          'rhyming'],
-             'fname': 'output\\interaction_plot(WORDS~AGE_X_CONDITION).png',
+             'fname': r'output/interaction_plot(WORDS~AGE_X_CONDITION).png',
              'maintitle': 'WORDS by AGE * CONDITION',
              'numcols': 5,
              'numrows': 1,
@@ -342,7 +342,7 @@ class Test_interaction_plot(unittest.TestCase):
         # a simple plot
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\words~ageXcondition.csv')
+        df.read_tbl(r'data/words~ageXcondition.csv')
         D = df.interaction_plot('WORDS','AGE',
                                 sepxplots='CONDITION',
                                 output_dir='output')
@@ -369,7 +369,7 @@ class Test_interaction_plot(unittest.TestCase):
     def test5(self):
         R = {'aggregate': None,
              'clevels': ['M1', 'M2', 'M3'],
-             'fname': 'output\\interaction_plot(ERROR~TIMEOFDAY_X_MODEL,yerr=1.0).png',
+             'fname': r'output/interaction_plot(ERROR~TIMEOFDAY_X_MODEL,yerr=1.0).png',
              'maintitle': 'ERROR by TIMEOFDAY * MODEL',
              'numcols': 3,
              'numrows': 1,
@@ -387,7 +387,7 @@ class Test_interaction_plot(unittest.TestCase):
         # specify yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\error~subjectXtimeofdayXcourseXmodel_MISSING.csv')
+        df.read_tbl(r'data/error~subjectXtimeofdayXcourseXmodel_MISSING.csv')
         D = df.interaction_plot('ERROR','TIMEOFDAY',
                                 sepxplots='MODEL',
                                 yerr=1.,
@@ -415,7 +415,7 @@ class Test_interaction_plot(unittest.TestCase):
     def test6(self):
         R = {'aggregate': 'ci',
              'clevels': [1],
-             'fname': 'output\\interaction_plot(SUPPRESSION~CYCLE_X_PHASE,yerr=95% ci).png',
+             'fname': r'output/interaction_plot(SUPPRESSION~CYCLE_X_PHASE,yerr=95% ci).png',
              'maintitle': 'SUPPRESSION by CYCLE * PHASE',
              'numcols': 1,
              'numrows': 2,
@@ -433,7 +433,7 @@ class Test_interaction_plot(unittest.TestCase):
         # generate yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl(r'data/suppression~subjectXgroupXageXcycleXphase.csv')
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 sepyplots='PHASE',
                                 yerr='ci',
@@ -461,7 +461,7 @@ class Test_interaction_plot(unittest.TestCase):
     def test7(self):
         R = {'aggregate': 'ci',
              'clevels': ['I', 'II'],
-             'fname': 'output\\interaction_plot(SUPPRESSION~CYCLE_X_PHASE_X_GROUP,yerr=95% ci).png',
+             'fname': r'output/interaction_plot(SUPPRESSION~CYCLE_X_PHASE_X_GROUP,yerr=95% ci).png',
              'maintitle': 'SUPPRESSION by CYCLE * PHASE * GROUP',
              'numcols': 2,
              'numrows': 2,
@@ -492,7 +492,7 @@ class Test_interaction_plot(unittest.TestCase):
         # separate y plots and separate x plots
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl(r'data/suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 sepxplots='PHASE',
