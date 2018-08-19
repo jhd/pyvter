@@ -192,7 +192,7 @@ elif sys.version_info[0] == 3:
 import csv
 import numpy
 import scipy
-import matplotlib
+from matplotlib import pyplot as plt
 
 from collections import OrderedDict
 from copy import copy
@@ -1950,7 +1950,7 @@ class Anova(OrderedDict):
             if quality=='medium' : dpi=200
             elif quality=='high' : dpi=300
             
-            im=matplotlib.imread(fname)[:,:,0]
+            im=plt.imread(fname)[:,:,0]
             imh,imw=shape(im)
 
             width,height=imw*1.,imh*1.
