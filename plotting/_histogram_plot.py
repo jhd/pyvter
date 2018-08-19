@@ -50,7 +50,7 @@ def histogram_plot(df, val, where=None, bins=10,
     
     fig=plt.figure()
     tup = plt.hist(np.array(v), bins=bins, range=range,
-                     normed=density, cumulative=cumulative)
+                     density=density, cumulative=cumulative)
     plt.title(val)
 
     if fname == None:
