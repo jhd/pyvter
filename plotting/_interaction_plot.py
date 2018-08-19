@@ -440,8 +440,8 @@ def interaction_plot(df, val, xaxis,
         factors = [xaxis,seplines,sepxplots,sepyplots]
         fname += '~' + '_X_'.join([str(f) for f in factors if f != None])
         if aggregate != None:
-            fname += ',aggregate=' + aggregate
-        elif yerr is not None:
+            fname += ',yerr=' + aggregate
+        elif yerr != None:
             fname += ',yerr=' + str(yerr[0])
         fname += ').png'
 
