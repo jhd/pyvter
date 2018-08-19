@@ -109,7 +109,7 @@ class Ttest(OrderedDict):
 ##            raise TypeError('A must be a list-like object')
             
         try:
-            if B != None:
+            if B is not None:
                 B = _flatten(list(copy(B)))
         except:
             raise TypeError('B must be a list-like object')
