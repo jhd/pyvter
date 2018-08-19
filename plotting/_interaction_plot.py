@@ -370,8 +370,8 @@ def interaction_plot(df, val, xaxis,
                         axs[-1].plot([xmin, xmax], [0., 0.], 'k:')
 
                 plt.figlegend(plots, labels, loc=1,
-                                labelsep=.005,
-                                handlelen=.01,
+                                labelspacing=.005,
+                                handlelength=.01,
                                 handletextpad=.005)
 
             test['y'].append(y)
