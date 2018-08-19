@@ -8,7 +8,7 @@ nose = "*"
 
 [dev-packages]
 matplotlib = "*"
-numpy = "==1.11"
+numpy = "==1.15"
 scipy = "*"
 "pystaggrelite3" = "*"
 dictset = "*"
