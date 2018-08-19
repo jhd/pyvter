@@ -17,7 +17,7 @@ import math
 from collections import Counter
 from copy import copy, deepcopy
 
-import matplotlib
+from matplotlib import pyplot as plt
 import scipy
 import numpy as np
 
@@ -239,7 +239,7 @@ def interaction_plot(df, val, xaxis,
     
     #  6. Initialize matplotlib.figure and set plot parameters
     ##############################################################  
-    fig = matplotlib.figure(figsize=(6*numcols, 4*numrows+1))
+    fig = plt.figure(figsize=(6*numcols, 4*numrows+1))
     fig.subplots_adjust(wspace=.05, hspace=0.2)
     
     #  7. Build and set main title
@@ -281,7 +281,7 @@ def interaction_plot(df, val, xaxis,
             
             #  8.1 Create new axes for the subplot
             ######################################################
-            axs.append(matplotlib.subplot(numrows, numcols, plotnum))
+            axs.append(plt.subplot(numrows, numcols, plotnum))
 
             ######## If separate lines are not specified #########
             if seplines == None:
@@ -314,7 +314,7 @@ def interaction_plot(df, val, xaxis,
                     
                 else : # categorical x axis
                     axs[-1].errorbar(_xrange(len(x)), y, yerr)
-                    matplotlib.xticks(_xrange(len(x)), x)
+                    plt.xticks(_xrange(len(x)), x)
                     xmin = - 0.5
                     xmax = len(x) - 0.5
                     
@@ -363,13 +363,13 @@ def interaction_plot(df, val, xaxis,
                             axs[-1].errorbar(
                                 _xrange(len(x)), y[i].flatten(), yerr)[0])
                         
-                        matplotlib.xticks(_xrange(len(x)), x)
+                        plt.xticks(_xrange(len(x)), x)
                         xmin = - 0.5
                         xmax = len(x) - 0.5
                         
                         axs[-1].plot([xmin, xmax], [0., 0.], 'k:')
 
-                matplotlib.figlegend(plots, labels, loc=1,
+                plt.figlegend(plots, labels, loc=1,
                                 labelsep=.005,
                                 handlelen=.01,
                                 handletextsep=.005)
@@ -398,21 +398,21 @@ def interaction_plot(df, val, xaxis,
                         % (sepyplots, _str(rlevel),
                            sepxplots, _str(rlevel))
                 
-            matplotlib.title(title, fontsize='medium')
+            plt.title(title, fontsize='medium')
             test['subplot_titles'].append(title)
 
             #  8.3 Format the subplot
             ######################################################
-            matplotlib.xlim(xmin, xmax)
-            matplotlib.ylim(ymin, ymax)
+            plt.xlim(xmin, xmax)
+            plt.ylim(ymin, ymax)
 
             # supress tick labels unless subplot is on the bottom
             # row or the far left column
             if r != (len(rlevels) - 1):
-                matplotlib.setp(axs[-1].get_xticklabels(), visible=False)
+                plt.setp(axs[-1].get_xticklabels(), visible=False)
                 
             if c != 0:
-                matplotlib.setp(axs[-1].get_yticklabels(), visible=False)
+                plt.setp(axs[-1].get_yticklabels(), visible=False)
 
             # Set the aspect ratio for the subplot
             Dx = abs(axs[-1].get_xlim()[0] - axs[-1].get_xlim()[1])
@@ -429,7 +429,7 @@ def interaction_plot(df, val, xaxis,
         if aggregate == 'ci':
             aggregate = '95% ci' 
             
-        matplotlib.xlabel('\n\n                '
+        plt.xlabel('\n\n                '
                      '*Error bars reflect %s'\
                      %aggregate.upper())
 
@@ -448,18 +448,18 @@ def interaction_plot(df, val, xaxis,
     fname = os.path.join(output_dir, fname)
     
     if quality == 'low' or fname.endswith('.svg'):
-        matplotlib.savefig(fname)
+        plt.savefig(fname)
         
     elif quality == 'medium':
-        matplotlib.savefig(fname, dpi=200)
+        plt.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        matplotlib.savefig(fname, dpi=300)
+        plt.savefig(fname, dpi=300)
         
     else:
-        matplotlib.savefig(fname)
+        plt.savefig(fname)
 
-    matplotlib.close()
+    plt.close()
 
     test['fname'] = fname
 

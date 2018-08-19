@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
 
 import os
 
-import matplotlib
+from matplotlib import pyplot as plt
 import scipy
 import numpy as np
 
@@ -81,7 +81,7 @@ def scatter_matrix(df, variables, alpha=0.5, grid=False,
                           squeeze=False)
 
     # remove gaps between subplots
-    matplotlib.subplots_adjust(wspace=0, hspace=0)
+    plt.subplots_adjust(wspace=0, hspace=0)
 
     ticks = {}
     lims = {}
@@ -285,5 +285,5 @@ def scatter_matrix(df, variables, alpha=0.5, grid=False,
     else:
         fig.savefig(fname)
 
-    matplotlib.close()
+    plt.close()
 
