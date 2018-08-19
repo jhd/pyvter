@@ -375,7 +375,7 @@ def interaction_plot(df, val, xaxis,
                                 handletextpad=.005)
 
             test['y'].append(y)
-            if yerr == None:
+            if yerr is None:
                 test['yerr'].append([])
             else:
                 test['yerr'].append(yerr)
@@ -441,7 +441,7 @@ def interaction_plot(df, val, xaxis,
         fname += '~' + '_X_'.join([str(f) for f in factors if f != None])
         if aggregate != None:
             fname += ',aggregate=' + aggregate
-        elif yerr != None:
+        elif yerr is not None:
             fname += ',yerr=' + str(yerr[0])
         fname += ').png'
 
