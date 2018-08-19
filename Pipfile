@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+nose = "*"
+
+[dev-packages]
+matplotlib = "*"
+numpy = "==1.11"
+scipy = "*"
+"pystaggrelite3" = "*"
+dictset = "*"
+pandas = "*"
+pylint = "<2.0.0"
+
+[requires]
+python_version = "2.7"

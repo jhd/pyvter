@@ -13,7 +13,7 @@ elif sys.version_info[0] == 3:
 
 import os
 
-import matplotlib
+from matplotlib import pyplot as plt
 import numpy as np
 
 from pyvter.plotting.support import \
@@ -77,19 +77,19 @@ def scatter_plot(df, aname, bname, where=None, trend=None,
     ylim = [bmin - .1*brange, bmax + .1*brange]
 
     # initialize the figure
-    fig=matplotlib.figure(figsize=(4,4))
-    fig.subplots_adjust(left=.2, bottom=.2, top=.95, right=.95)
+    fig=plt.figure(figsize=(4,4))
+    plt.subplots_adjust(left=.2, bottom=.2, top=.95, right=.95)
 
     # make the scatter plot
-    matplotlib.scatter(adata, bdata, alpha=alpha)
+    plt.scatter(adata, bdata, alpha=alpha)
 
     # format stuff
-    matplotlib.xticks(xticks, _tick_formatter(xticks),rotation=30)
-    matplotlib.yticks(yticks, _tick_formatter(yticks))
-    matplotlib.xlim(xlim)
-    matplotlib.ylim(ylim)
-    matplotlib.xlabel(aname)
-    matplotlib.ylabel(bname)
+    plt.xticks(xticks, _tick_formatter(xticks),rotation=30)
+    plt.yticks(yticks, _tick_formatter(yticks))
+    plt.xlim(xlim)
+    plt.ylim(ylim)
+    plt.xlabel(aname)
+    plt.ylabel(bname)
 
     # perform trend fit if requested
     if trend in ['exponential','linear','logarithmic',
@@ -102,8 +102,8 @@ def scatter_plot(df, aname, bname, where=None, trend=None,
 
         # plot fit
         ind = np.linspace(xlim[0], xlim[1], 1000)  
-        matplotlib.plot(ind, model(ind), alpha=.8)                        
-        matplotlib.text(xticks[0], yticks[-1],
+        plt.plot(ind, model(ind), alpha=.8)                        
+        plt.text(xticks[0], yticks[-1],
                    tex_str,
                    horizontalalignment='left',
                    verticalalignment='top',
@@ -119,18 +119,18 @@ def scatter_plot(df, aname, bname, where=None, trend=None,
 
     # save figure
     if quality == 'low' or fname.endswith('.svg'):
-        matplotlib.savefig(fname)
+        plt.savefig(fname)
         
     elif quality == 'medium':
-        matplotlib.savefig(fname, dpi=200)
+        plt.savefig(fname, dpi=200)
         
     elif quality == 'high':
-        matplotlib.savefig(fname, dpi=300)
+        plt.savefig(fname, dpi=300)
         
     else:
-        matplotlib.savefig(fname)
+        plt.savefig(fname)
 
-    matplotlib.close()
+    plt.close()
 
     if df.TESTMODE:
         # build and return test dictionary

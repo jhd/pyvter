@@ -211,7 +211,7 @@ class Test_interaction_plot(unittest.TestCase):
         # generate yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 seplines='AGE',
@@ -270,7 +270,7 @@ class Test_interaction_plot(unittest.TestCase):
         # separate y plots and separate x plots
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 seplines='AGE',
@@ -300,7 +300,7 @@ class Test_interaction_plot(unittest.TestCase):
         # separate y plots and separate x plots
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 seplines='AGE',
@@ -342,7 +342,7 @@ class Test_interaction_plot(unittest.TestCase):
         # a simple plot
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data/words~ageXcondition.csv')
+        df.read_tbl('data\\words~ageXcondition.csv')
         D = df.interaction_plot('WORDS','AGE',
                                 sepxplots='CONDITION',
                                 output_dir='output')
@@ -387,7 +387,7 @@ class Test_interaction_plot(unittest.TestCase):
         # specify yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data/error~subjectXtimeofdayXcourseXmodel_MISSING.csv')
+        df.read_tbl('data\\error~subjectXtimeofdayXcourseXmodel_MISSING.csv')
         D = df.interaction_plot('ERROR','TIMEOFDAY',
                                 sepxplots='MODEL',
                                 yerr=1.,
@@ -433,7 +433,7 @@ class Test_interaction_plot(unittest.TestCase):
         # generate yerr
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 sepyplots='PHASE',
                                 yerr='ci',
@@ -492,7 +492,7 @@ class Test_interaction_plot(unittest.TestCase):
         # separate y plots and separate x plots
         df=DataFrame()
         df.TESTMODE = True
-        df.read_tbl('data\suppression~subjectXgroupXageXcycleXphase.csv')
+        df.read_tbl('data\\suppression~subjectXgroupXageXcycleXphase.csv')
 
         D = df.interaction_plot('SUPPRESSION','CYCLE',
                                 sepxplots='PHASE',
