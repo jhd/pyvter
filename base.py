@@ -2588,7 +2588,7 @@ class PyvtTbl(np.ma.MaskedArray, object):
             kwds.append(', row_tots=np.ma.array(%s%s)'%\
                         (self.row_tots.tolist(), mask_str))
                 
-        if self.col_tots != None:
+        if self.col_tots is not None:
             mask_str =''
             if any(_flatten([self.col_tots.mask])):
                 mask_str = ', mask=%s'%repr(self.col_tots.mask)
