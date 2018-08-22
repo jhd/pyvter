@@ -32,9 +32,9 @@ import pystaggrelite3
 from dictset import DictSet
 
 from . import stats
-from stats.qsturng import qsturng, psturng
-from misc.texttable import Texttable as TextTable
-from misc.support import *
+from . stats.qsturng import qsturng, psturng
+from .misc.texttable import Texttable as TextTable
+from .misc.support import *
 from . import plotting
 
 # base.py holds DataFrame and Pyvttbl
