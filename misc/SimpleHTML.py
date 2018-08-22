@@ -7,7 +7,7 @@
 """SimpleHTML Writer Module"""
 import re
 from copy import copy
-from md5 import md5
+from hashlib import md5
 
 def isfloat(string):
     """Returns True if string is a float"""
