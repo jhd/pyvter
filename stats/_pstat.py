@@ -105,7 +105,7 @@ functions/methods.  Their inclusion here is for function name consistency.
 ##
 ## 11/08/98 ... fixed aput to output large arrays correctly
 
-import _stats  # required 3rd party module
+from . import _stats  # required 3rd party module
 import string, copy
 from types import *
 
@@ -290,13 +290,13 @@ Returns: a list of lists with all unique permutations of entries appearing in
              for col in collapsecols:
                  avgcol = colex(tmprows,col)
                  item.append(cfcn(avgcol))
-                 if fcn1 <> None:
+                 if fcn1 != None:
                      try:
                          test = fcn1(avgcol)
                      except:
                          test = 'N/A'
                      item.append(test)
-                 if fcn2 <> None:
+                 if fcn2 != None:
                      try:
                          test = fcn2(avgcol)
                      except:
@@ -401,7 +401,7 @@ Usage:   linedelimited (inlist,delimiter)
 """
     outstr = ''
     for item in inlist:
-        if type(item) <> StringType:
+        if type(item) != StringType:
             item = str(item)
         outstr = outstr + item + delimiter
     outstr = outstr[0:-1]
@@ -417,7 +417,7 @@ Usage:   lineincols (inlist,colsize)   where colsize is an integer
 """
     outstr = ''
     for item in inlist:
-        if type(item) <> StringType:
+        if type(item) != StringType:
             item = str(item)
         size = len(item)
         if size <= colsize:
@@ -441,7 +441,7 @@ Returns: formatted string created from inlist
 """
     outstr = ''
     for i in range(len(inlist)):
-        if type(inlist[i]) <> StringType:
+        if type(inlist[i]) != StringType:
             item = str(inlist[i])
         else:
             item = inlist[i]
@@ -482,7 +482,7 @@ Returns: if l = [1,2,'hi'] then returns [[1],[2],['hi']] etc.
 
 
 def makestr (x):
-    if type(x) <> StringType:
+    if type(x) != StringType:
         x = str(x)
     return x
 
@@ -519,9 +519,9 @@ Returns: None
             dashes = [0]*len(maxsize)
             for j in range(len(maxsize)):
                 dashes[j] = '-'*(maxsize[j]-2)
-            print lineincustcols(dashes,maxsize)
+            print(lineincustcols(dashes,maxsize))
         else:
-            print lineincustcols(row,maxsize)
+            print(lineincustcols(row,maxsize))
     return None
 
 
@@ -534,7 +534,7 @@ Usage:   printincols (listoflists,colsize)
 Returns: None
 """
     for row in listoflists:
-        print lineincols(row,colsize)
+        print(lineincols(row,colsize))
     return None
 
 
@@ -547,9 +547,9 @@ Returns: None
 """
     for row in listoflists:
         if row[-1] == '\n':
-            print row,
+            print(row,)
         else:
-            print row
+            print(row)
     return None
 
 
@@ -789,13 +789,13 @@ Returns: unique 'conditions' specified by the contents of columns specified
     if keepcols == []:
         avgcol = acolex(a,collapsecols)
         means = N.sum(avgcol)/float(len(avgcol))
-        if fcn1<>None:
+        if fcn1!=None:
             try:
                 test = fcn1(avgcol)
             except:
                 test = N.array(['N/A']*len(means))
             means = aabut(means,test)
-        if fcn2<>None:
+        if fcn2!=None:
             try:
                 test = fcn2(avgcol)
             except:
@@ -816,13 +816,13 @@ Returns: unique 'conditions' specified by the contents of columns specified
             for col in collapsecols:
                 avgcol = acolex(tmprows,col)
                 item.append(acollmean(avgcol))
-                if fcn1<>None:
+                if fcn1!=None:
                     try:
                         test = fcn1(avgcol)
                     except:
                         test = 'N/A'
                     item.append(test)
-                if fcn2<>None:
+                if fcn2!=None:
                     try:
                         test = fcn2(avgcol)
                     except:
