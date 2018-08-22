@@ -211,7 +211,6 @@ except:
     from scipy.stats import sem as stderr
 
 from scipy.signal import detrend
-from sets import Set
 
 from pyvter.misc.SimpleHTML import *
 from pyvter.misc.texttable import Texttable as TextTable
@@ -964,7 +963,7 @@ class Anova(OrderedDict):
                         
                         if efs2 not in self.befs and efs2!=efs:
                             if self.sub in efs2 and \
-                            len(Set(efs2).intersection(Set(bfactors)))>0:
+                            len(set(efs2).intersection(set(bfactors)))>0:
                                 pass
                             
                             else:
@@ -1403,7 +1402,7 @@ class Anova(OrderedDict):
                         if efs2 not in self.befs and \
                            efs2 not in defs and \
                            efs2 not in self.wefs \
-                           and len(Set(efs2).difference(Set(efs+bfactors)))==0:
+                           and len(set(efs2).difference(set(efs+bfactors)))==0:
                             defs.append(efs2)
                             
                             tbodys.append([])
@@ -1731,7 +1730,7 @@ class Anova(OrderedDict):
                         if efs2 not in self.befs and \
                            efs2 not in defs and \
                            efs2 not in self.wefs \
-                           and len(Set(efs2).difference(Set(efs+bfactors)))==0:
+                           and len(set(efs2).difference(set(efs+bfactors)))==0:
                             defs.append(efs2)
                             treatment = []
                             r=self[tuple(efs2)]
