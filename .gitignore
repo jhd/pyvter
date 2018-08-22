@@ -3,4 +3,7 @@
 *.pyee
 *.png
 tests/output/*
+tests/cover/*
+.coverage
+coverage_html.js
 nosetests.xml
